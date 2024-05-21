@@ -1,17 +1,11 @@
 "use strict";
 
-const greet = new Greet("John");
-
-class Greet {
-  constructor(name) {
-    this.name = name;
-  }
-
-  greeting() {
-    return `Hello ${this.name}`;
-  }
+function Greet(name) {
+  this.name = name;
 }
 
-console.log(greet.greeting());
+Greet.prototype.greeting = function () {
+  return "Hello " + this.name;
+};
 
-export default Greet;
+module.exports = Greet;
